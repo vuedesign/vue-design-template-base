@@ -1,7 +1,7 @@
 {
-    "current": "vued-template-base",
+    "current": "vued-template__base",
     "list": [
-        "vued-template-admin",
-        "vued-template-base"
+        "vued-template__admin",
+        "vued-template__base"
     ]
 }
