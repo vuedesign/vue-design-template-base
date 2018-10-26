@@ -27,7 +27,7 @@ export default {
         };
     },
     computed: {
-        ...mapGetters('users/group', {
+        ...mapGetters('users/user', {
         })
     },
     created() {
@@ -37,13 +37,13 @@ export default {
         handleClose(done) {
             this.$confirm('确认关闭？')
                 .then(_ => {
-                    this.$router.push({ name: 'users-group' });
+                    this.$router.push({ name: 'users-user' });
                     done();
                 })
                 .catch(_ => {});
         },
         handleCancel() {
-            this.$router.push({ name: 'users-group' });
+            this.$router.push({ name: 'users-user' });
         }
     }
 };

@@ -1,6 +1,5 @@
 <template>
   <div id="vue-design-app">
-    <img src="./assets/images/logo.png">
     <router-view/>
   </div>
 </template>
@@ -9,9 +8,6 @@
 export default {
     name: 'App',
     created() {
-        this.$store.dispatch('getConstants');
-        this.$store.dispatch('getUserName');
-
         // cookie
         this.$cookies.set('TEST_COOKIE_1', {
             username: 'wujian====',
@@ -23,12 +19,11 @@ export default {
 </script>
 
 <style>
+@import "assets/styles/reset.css";
 #vue-design-app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
 }
 </style>

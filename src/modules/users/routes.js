@@ -13,7 +13,7 @@ export default {
     component: () => import('./Index'),
     redirect: 'users/user',
     children: [
-        group,
-        user
+        ...group,
+        ...user
     ]
 };

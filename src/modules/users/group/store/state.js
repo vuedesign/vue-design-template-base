@@ -8,28 +8,6 @@ export default {
     filters: {
         search: ''
     },
-    columns: [
-        {
-            title: '名称',
-            key: 'name'
-        },
-        {
-            title: '呢称',
-            key: 'nickname'
-        },
-        {
-            title: '邮箱',
-            key: 'email'
-        },
-        {
-            title: '年龄',
-            key: 'age'
-        },
-        {
-            title: '地址',
-            key: 'address'
-        }
-    ],
     data: [],
     total: 0
 };

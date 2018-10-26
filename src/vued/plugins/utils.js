@@ -1,19 +1,11 @@
 /**
  * Created by n.see on 2018/10/25.
  */
-import { getAPI, getURL } from '../global/helpers';
+import { getURL } from '../global/helpers';
 
 const Utils = {};
 
 Utils.install = (Vue, options = {}) => {
-    const apis = options.apis || {};
-    Vue.prototype.$getAPI = (type, payload) => {
-        return getAPI(apis, type, payload);
-    };
-    Vue.getAPI = (type, payload) => {
-        return getAPI(apis, type, payload);
-    };
-
     const urls = options.urls || {};
     Vue.prototype.$getURL = (type, payload) => {
         return getURL(urls || {}, type, payload);

@@ -14,7 +14,11 @@ export default [
     {
         path: '/admin',
         name: 'admin',
-        component: () => import('@/modules/Admin'),
+        meta: {
+            label: '首页'
+        },
+        redirect: 'admin/dashboard',
+        component: () => import('@/components/layouts/Admin'),
         children: admin
     },
     ...root,
