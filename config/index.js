@@ -16,6 +16,12 @@ module.exports = {
             pathRewrite: {
                 '^/api/v1' : '/api/v1'
             }
+        },
+        '/node': {
+            target: 'http://127.0.0.1:7001',
+            pathRewrite: {
+                '^/node' : '/node'
+            }
         }
     },
     // Various Dev Server settings

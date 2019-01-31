@@ -13,6 +13,9 @@ export const isTimestampDisabled = false;
  * @returns {*}
  */
 export const ajaxRequestSuccess = (config) => {
+    if (localStorage.getItem('token')) {
+        config.headers.common['Authorization'] = localStorage.getItem('token');
+    }
     return config;
 };
 
@@ -31,6 +34,12 @@ export const ajaxRequestFailure = (error) => {
  * @returns {*}
  */
 export const ajaxResponseSuccess = (response) => {
+    console.log('response', response);
+    if (response.code !== 1) {
+        // router.push({
+        //     name: 'auth-login'
+        // });
+    }
     return response;
 };
 
