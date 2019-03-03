@@ -26,15 +26,16 @@ const router = createRouter({
     interceptors
 });
 
+const baseURL = process.env.BASE_URL;
 const ajax = createAjax({
-    baseURL: '/',
+    baseURL,
     interceptors
 });
 
 sync(store, router);
 
 initAjax({
-    baseURL: '/',
+    baseURL,
     interceptors
 });
 

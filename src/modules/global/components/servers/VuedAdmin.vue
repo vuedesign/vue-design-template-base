@@ -10,10 +10,10 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import VuedTShape from '@/components/layouts/VuedTShape';
-import VuedAside from '@/components/servers/VuedAside';
-import VuedHeader from '@/components/servers/VuedHeader';
-import VuedBody from '@/components/layouts/VuedBody';
+import VuedTShape from '@/modules/global/components/layouts/VuedTShape';
+import VuedAside from '@/modules/global/components/servers/VuedAside';
+import VuedHeader from '@/modules/global/components/servers/VuedHeader';
+import VuedBody from '@/modules/global/components/layouts/VuedBody';
 
 export default {
     name: 'vued-admin',

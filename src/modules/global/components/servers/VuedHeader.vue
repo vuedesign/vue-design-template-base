@@ -81,7 +81,7 @@
 
 <script>
 import headerMenu from '@/configs/headerMenu';
-import VuedBreadcrumb from '@/components/servers/VuedBreadcrumb';
+import VuedBreadcrumb from '@/modules/global/components/servers/VuedBreadcrumb';
 
 export default {
     name: 'vued-header',
