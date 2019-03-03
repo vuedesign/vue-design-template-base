@@ -1,7 +1,8 @@
 {
     "name": "modules",
     "children": [
-        "error",
-        "users"
+        "dashboard",
+        "users",
+        "operate"
     ]
 }

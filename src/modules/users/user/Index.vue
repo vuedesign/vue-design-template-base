@@ -1,50 +1,46 @@
 <template>
-    <div class="users-user-list">
+    <div class="operate-activity-list">
+        <vued-filter>
+            <ul class="left">
+                <li><el-button type="primary" size="small" @click="handleAddClick">新增</el-button></li>
+            </ul>
+            <ul class="right">
+                <li><el-input type="text" size="small" /></li>
+            </ul>
+        </vued-filter>
         <el-table
+            size="medium"
             :data="data"
-            style="width: 100%">
-            <el-table-column
-                prop="name"
-                label="姓名"
-                width="180">
-            </el-table-column>
-            <el-table-column
-                prop="address"
-                label="地址">
-            </el-table-column>
-            <el-table-column
-                prop="date"
-                label="日期"
-                width="180">
-            </el-table-column>
-            <el-table-column
-                fixed="right"
-                label="操作"
-                width="100">
+            style="width: 100%; border-radius: 3px;">
+            <el-table-column prop="name" label="姓名" min-width="100" />
+            <el-table-column prop="birthday" label="生日" min-width="120" />
+            <el-table-column prop="email" label="E-mail" min-width="120" />
+            <el-table-column prop="address" label="地址" min-width="180"/>
+            <el-table-column fixed="right" label="操作" width="140">
                 <template slot-scope="scope">
-                    <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-                    <el-button @click="handleClick(scope.row)" type="text" size="small">编辑</el-button>
+                    <el-button @click="handleViewClick(scope.row)" type="text" size="small">查看</el-button>
+                    <el-button @click="handleEditClick(scope.row)" type="text" size="small">编辑</el-button>
+                    <el-button @click="handleDelClick(scope.row)" type="text" size="small">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>
-        <div class="pagination">
+        <vued-pagination>
             <el-pagination
                 background
                 layout="prev, pager, next"
                 :total="1000">
             </el-pagination>
-        </div>
+        </vued-pagination>
         <router-view />
     </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+
 export default {
     data() {
-        return {
-            createBabel: '新增用户组'
-        };
+        return {};
     },
     computed: {
         ...mapGetters('users/user', [
@@ -57,8 +53,17 @@ export default {
         this.$store.dispatch('users/user/find');
     },
     methods: {
-        handleClick() {
-            this.$router.push({ name: 'users-user-update' });
+        handleAddClick() {
+            this.$router.push({ name: 'operate-activity-add' });
+        },
+        handleEditClick({ id }) {
+            this.$router.push({ name: 'operate-activity-edit', params: { id } });
+        },
+        handleDelClick({ id }) {
+            // this.$router.push({ name: 'users-user-update' });
+        },
+        handleViewClick({ id }) {
+            this.$router.push({ name: 'users-user-view', params: { id } });
         }
     }
 };

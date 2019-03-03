@@ -6,14 +6,16 @@ import * as types from './types';
 import * as api from '../api';
 import { to } from '@/vued';
 
-export const find = async({ commit }) => {
-    const [err, res] = await to(api.find());
+export const find = async({ commit, getters }) => {
+    commit(types.LOADING, true);
+    const params = getters.filters;
+    const [err, res] = await to(api.find(params));
     if (err) {
         return;
     }
-    console.log('res *** ', res);
-    commit(types.DATA, res.data);
-    commit(types.TOTAL, res.total);
+    commit(types.DATA, res.list);
+    commit(types.TOTAL, res.pagination.total);
+    commit(types.LOADING, false);
 };
 
 export const findOne = async({ commit }, params) => {

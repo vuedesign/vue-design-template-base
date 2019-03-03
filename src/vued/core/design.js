@@ -22,14 +22,14 @@ Design.filters = (filtersPath) => {
 Design.directives = (directivesPath) => {
     const directives = loadFile(directivesPath, {});
     Object.keys(directives).forEach(key => {
-        Vue.filter(key, directives[key]);
+        Vue.directive(key, directives[key]);
     });
 };
 
 Design.components = (componentsPath) => {
-    const components = loadFile(componentsPath, {});
-    Object.keys(components).forEach(key => {
-        Vue.component(key, components[key]);
+    const components = loadFile(componentsPath, []);
+    components.forEach(component => {
+        Vue.component(component.name, component);
     });
 };
 

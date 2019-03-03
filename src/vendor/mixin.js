@@ -4,12 +4,9 @@ export default {
             mixin: 'mixin'
         };
     },
-    mounted() {
-        this.mixinTest();
-    },
     methods: {
-        mixinTest() {
-            console.log('====', this.mixin);
+        testMixin() {
+            console.log(this.mixin);
         }
     }
 };

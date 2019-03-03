@@ -5,3 +5,4 @@
 export const DATA = 'DATA';
 export const FILTERS = 'FILTERS';
 export const TOTAL = 'TOTAL';
+export const LOADING = 'LOADING';

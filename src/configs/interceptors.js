@@ -2,9 +2,9 @@
  * 注：vued依赖本文件, 不能删
  */
 
-import { store, router } from '@/vued';
+import { store } from '@/vued';
 
-let token = 'VHJK324567YU345667POIU';
+// let token = 'VHJK324567YU345667POIU';
 export const isTimestampDisabled = false;
 
 /**
@@ -13,8 +13,9 @@ export const isTimestampDisabled = false;
  * @returns {*}
  */
 export const ajaxRequestSuccess = (config) => {
-    console.log('store:', store);
-    console.log('router:', router);
+    if (localStorage.getItem('token')) {
+        config.headers.common['Authorization'] = localStorage.getItem('token');
+    }
     return config;
 };
 
@@ -33,7 +34,13 @@ export const ajaxRequestFailure = (error) => {
  * @returns {*}
  */
 export const ajaxResponseSuccess = (response) => {
-    return response.data;
+    console.log('response', response);
+    if (response.code !== 1) {
+        // router.push({
+        //     name: 'auth-login'
+        // });
+    }
+    return response;
 };
 
 /**
@@ -46,9 +53,7 @@ export const ajaxResponseFailure = (error) => {
 };
 
 export const routerBeforeEach = ({ to, from, next }) => {
-    console.log('routerBeforeEach', to, from);
-    console.log('token:', token);
-    store.commit('BREADCRUMB', to);
+    store.commit('global/BREADCRUMB', to);
     next();
 };
 
@@ -57,5 +62,4 @@ export const routerBeforeResolve = ({ to, from, next }) => {
 };
 
 export const routerAfterEach = ({ to, from }) => {
-    console.log(store);
 };

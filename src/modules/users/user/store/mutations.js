@@ -5,7 +5,8 @@
 import {
     FILTERS,
     DATA,
-    TOTAL
+    TOTAL,
+    LOADING
 } from './types';
 
 export default {
@@ -20,5 +21,8 @@ export default {
     },
     [TOTAL](state, data) {
         state.total = data;
+    },
+    [LOADING](state, data) {
+        state.loading = data;
     }
 };

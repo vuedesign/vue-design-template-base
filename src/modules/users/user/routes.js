@@ -1,6 +1,6 @@
 export default [
     {
-        path: 'user',
+        path: 'user/:page',
         name: 'users-user',
         meta: {
             label: '用户'
@@ -8,20 +8,28 @@ export default [
         component: () => import('./Index'),
         children: [
             {
-                path: 'create',
-                name: 'users-user-create',
+                path: 'add',
+                name: 'users-user-add',
                 meta: {
-                    label: '创建用户'
+                    label: '新增用户'
                 },
-                component: () => import('./Update')
+                component: () => import('./Add')
             },
             {
-                path: 'update',
-                name: 'users-user-update',
+                path: 'edit/:id',
+                name: 'users-user-edit',
                 meta: {
                     label: '编辑用户'
                 },
-                component: () => import('./Update')
+                component: () => import('./Edit')
+            },
+            {
+                path: 'view/:id',
+                name: 'users-user-view',
+                meta: {
+                    label: '编辑用户'
+                },
+                component: () => import('./View')
             }
         ]
     }

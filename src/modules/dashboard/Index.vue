@@ -24,7 +24,7 @@ export default {
     },
     methods: {
         handleClick() {
-            this.$router.push({ name: 'users-user-update' });
+            this.$router.push({ name: 'operate-activity-update' });
         }
     }
 };

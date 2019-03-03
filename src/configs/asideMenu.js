@@ -2,12 +2,12 @@ export default [
     {
         name: 'dashboard',
         label: '仪表板',
-        icon: 'el-icon-menu'
+        icon: 'dashboard'
     },
     {
         name: 'users',
         label: '用户中心',
-        icon: 'el-icon-share',
+        icon: 'user',
         children: [
             {
                 name: 'group',

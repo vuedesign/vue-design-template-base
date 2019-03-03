@@ -6,8 +6,13 @@ export default {
     show: false,
     title: '',
     filters: {
-        search: ''
+        name: '',
+        address: '',
+        type: '',
+        page: 1,
+        pageSize: 20
     },
     data: [],
-    total: 0
+    total: 0,
+    loading: false
 };

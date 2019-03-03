@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import app from './core/app';
 import Design from './core/design';
 import to from './core/to';
@@ -6,18 +7,18 @@ import createStore from './core/store';
 import createRouter from './core/router';
 import initAjax from './core/ajax';
 import { createAjax } from './plugins/ajax';
+import { actionOfType } from './core/permission';
+import { filtersCommit } from './global/utils';
 
 // 导入路由配置
 import configRoutes from '@/configs/routes';
 // 导入拦截器，路由与ajax
 import * as interceptors from '@/configs/interceptors';
 // 导入vuex状态管理
-import configStore from '@/store';
+
 import modules from '@/configs/modules';
 
-// 导入vuex状态管理的子模块
-Object.assign(configStore, { modules });
-const store = createStore(configStore);
+const store = createStore({ modules });
 
 const router = createRouter({
     mode: 'history',
@@ -25,20 +26,28 @@ const router = createRouter({
     interceptors
 });
 
+const baseURL = process.env.BASE_URL;
 const ajax = createAjax({
-    baseURL: '/',
+    baseURL,
     interceptors
 });
 
 sync(store, router);
 
 initAjax({
-    baseURL: '/',
+    baseURL,
     interceptors
 });
 
-console.log('Design ================= ', Design);
+const actionOf = actionOfType(store);
+
+Vue.mixin({
+    methods: {
+        actionOf
+    }
+});
+
 Design.extend = app({ store, router });
 
-export { to, store, router, ajax };
+export { to, store, router, ajax, actionOf, filtersCommit };
 export default Design;

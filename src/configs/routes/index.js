@@ -9,7 +9,7 @@ export default [
     {
         path: '/',
         name: 'HelloWorld',
-        component: () => import('@/components/Home')
+        component: () => import('@/modules/global/components/Home')
     },
     {
         path: '/admin',
@@ -18,7 +18,7 @@ export default [
             label: '首页'
         },
         redirect: 'admin/dashboard',
-        component: () => import('@/components/layouts/Admin'),
+        component: () => import('@/modules/global/components/servers/VuedAdmin'),
         children: admin
     },
     ...root,
