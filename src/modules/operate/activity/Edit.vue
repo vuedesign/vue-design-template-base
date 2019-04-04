@@ -9,10 +9,10 @@
             ref="addForm"
             :model="formData"
             :rules="constants.rules"
-            label-width="80px">
+            :size="FORM.SIZE"
+            :label-width="FORM.LABEL_WIDTH">
             <el-form-item label="缩略图">
                 <el-upload
-                    size="medium"
                     class="image-uploader"
                     action="https://jsonplaceholder.typicode.com/posts/"
                     :show-file-list="false"
@@ -23,30 +23,30 @@
                 </el-upload>
             </el-form-item>
             <el-form-item label="活动名称">
-                <el-input v-model="formData.name" size="medium"></el-input>
+                <el-input v-model="formData.name" ></el-input>
             </el-form-item>
             <el-form-item label="活动区域">
-                <el-select v-model="formData.region" size="medium" placeholder="请选择活动区域">
+                <el-select v-model="formData.region"  placeholder="请选择活动区域">
                     <el-option label="区域一" value="shanghai"></el-option>
                     <el-option label="区域二" value="beijing"></el-option>
                 </el-select>
             </el-form-item>
             <el-form-item label="活动时间">
                 <el-col :span="12">
-                    <el-date-picker type="date" size="medium" placeholder="选择日期" v-model="formData.date" style="width: 100%;"></el-date-picker>
+                    <el-date-picker type="date"  placeholder="选择日期" v-model="formData.date" style="width: 100%;"></el-date-picker>
                 </el-col>
                 <el-col :span="1">
                     <span class="line"></span>
                 </el-col>
                 <el-col :span="11">
-                    <el-time-picker type="fixed-time" size="medium" placeholder="选择时间" v-model="formData.time" style="width: 100%;"></el-time-picker>
+                    <el-time-picker type="fixed-time"  placeholder="选择时间" v-model="formData.time" style="width: 100%;"></el-time-picker>
                 </el-col>
             </el-form-item>
             <el-form-item label="即时配送">
-                <el-switch size="medium" v-model="formData.delivery"></el-switch>
+                <el-switch  v-model="formData.delivery"></el-switch>
             </el-form-item>
             <el-form-item label="活动性质">
-                <el-checkbox-group v-model="formData.type" size="medium">
+                <el-checkbox-group v-model="formData.type" >
                     <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
                     <el-checkbox label="地推活动" name="type"></el-checkbox>
                     <el-checkbox label="线下主题活动" name="type"></el-checkbox>
@@ -54,18 +54,18 @@
                 </el-checkbox-group>
             </el-form-item>
             <el-form-item label="特殊资源">
-                <el-radio-group v-model="formData.resource" size="medium">
+                <el-radio-group v-model="formData.resource" >
                     <el-radio label="线上品牌商赞助"></el-radio>
                     <el-radio label="线下场地免费"></el-radio>
                 </el-radio-group>
             </el-form-item>
             <el-form-item label="活动形式">
-                <el-input type="textarea" v-model="formData.desc" size="medium" />
+                <el-input type="textarea" v-model="formData.desc"  />
             </el-form-item>
         </el-form>
         <span slot="footer" class="dialog-footer">
-            <el-button @click="handleCancel" size="medium" >取 消</el-button>
-            <el-button type="primary" @click="handleSubmit('addForm')" size="medium">确 定</el-button>
+            <el-button @click="handleCancel" :size="FORM.SIZE" >取 消</el-button>
+            <el-button type="primary" @click="handleSubmit('addForm')" :size="FORM.SIZE">确 定</el-button>
           </span>
     </el-dialog>
 </template>

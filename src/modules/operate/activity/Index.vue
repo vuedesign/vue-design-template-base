@@ -2,14 +2,14 @@
     <div class="operate-activity-list">
         <vued-filter>
             <ul class="left">
-                <li><el-button type="primary" size="small" @click="handleAddClick">新增</el-button></li>
+                <li><el-button type="primary" :size="FORM.SIZE"  @click="handleAddClick">新增</el-button></li>
             </ul>
             <ul class="right">
-                <li><el-input v-model="name" type="text" size="small" /></li>
+                <li><el-input v-model="name" type="text" :size="FORM.SIZE"  /></li>
             </ul>
         </vued-filter>
         <el-table
-            size="medium"
+            :size="FORM.SIZE"
             :data="list"
             style="width: 100%; border-radius: 3px;">
             <el-table-column label="缩略图" min-width="64" >
