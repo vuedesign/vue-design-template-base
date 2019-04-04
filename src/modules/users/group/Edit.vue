@@ -8,7 +8,7 @@
             width="60%"
             :visible="true"
             :before-close="handleClose">
-            <el-form ref="form" :model="formData" label-width="80px">
+            <el-form ref="form" :model="formData" :label-width="FORM.LABEL_WIDTH" :size="FORM.SIZE">
                 <el-form-item label="活动名称">
                     <el-input v-model="formData.name"></el-input>
                 </el-form-item>
@@ -49,8 +49,8 @@
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
-                <el-button @click="handleCancel" size="medium">取 消</el-button>
-                <el-button type="primary" @click="handleSubmit" size="medium">确 定</el-button>
+                <el-button @click="handleCancel" :size="FORM.SIZE">取 消</el-button>
+                <el-button type="primary" @click="handleSubmit" :size="FORM.SIZE">确 定</el-button>
               </span>
         </el-dialog>
     </div>

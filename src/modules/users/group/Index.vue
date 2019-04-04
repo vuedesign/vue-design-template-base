@@ -4,18 +4,18 @@
         <vued-filter>
             <ul class="left">
                 <li>
-                    <el-button type="primary" size="small" @click="handleAddClick">新增</el-button>
+                    <el-button type="primary" :size="FORM.SIZE" @click="handleAddClick">新增</el-button>
                 </li>
             </ul>
             <ul class="right">
                 <li>
-                    <el-input type="text" placeholder="用户组" v-model="address" size="small"></el-input>
+                    <el-input type="text" placeholder="用户组" v-model="address" :size="FORM.SIZE"></el-input>
                 </li>
                 <li>
-                    <el-input type="text" v-model="name" size="small"></el-input>
+                    <el-input type="text" v-model="name" :size="FORM.SIZE"></el-input>
                 </li>
                 <li>
-                    <el-select style="width: 110px" v-model="type" placeholder="请选择" size="small">
+                    <el-select style="width: 110px" v-model="type" placeholder="请选择" :size="FORM.SIZE">
                         <el-option label="超级管理员" value="supper"></el-option>
                         <el-option label="管理员" value="admin"></el-option>
                     </el-select>
@@ -23,7 +23,7 @@
             </ul>
         </vued-filter>
         <el-table
-            size="medium"
+            :size="FORM.SIZE"
             v-loading="loading"
             :data="data"
             style="width: 100%;border-radius: 3px;">

@@ -9,7 +9,7 @@ VueDesign.mixin('@/vendor/mixin');
 VueDesign.plugins('@/vendor/plugins');
 VueDesign.filters('@/vendor/filters');
 VueDesign.directives('@/vendor/directives');
-VueDesign.components('@/vendor/components');
+VueDesign.components();
 
 VueDesign.extend({
     App

@@ -8,6 +8,7 @@
             @current-change="handleCurrentChange"
             :current-page="currentPage"
             background
+            :page-size="pageSize"
             layout="prev, pager, next"
             :total="total">
         </el-pagination>
@@ -22,6 +23,9 @@ export default {
             type: Number
         },
         total: {
+            type: Number
+        },
+        pageSize: {
             type: Number
         }
     },

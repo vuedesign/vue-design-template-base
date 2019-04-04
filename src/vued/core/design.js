@@ -26,10 +26,10 @@ Design.directives = (directivesPath) => {
     });
 };
 
-Design.components = (componentsPath) => {
-    const components = loadFile(componentsPath, []);
-    components.forEach(component => {
-        Vue.component(component.name, component);
+Design.components = () => {
+    const components = require.context('@/vendor/components', false, /\.vue$/);
+    components.keys().map(key => {
+        Vue.component(components(key).default.name, components(key).default);
     });
 };
 
