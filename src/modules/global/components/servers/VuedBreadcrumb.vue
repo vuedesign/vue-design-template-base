@@ -20,7 +20,7 @@ export default {
 <style lang="scss">
     .vued-breadcrumb{
         width: 100%;
-        padding: 17px 16px;
+        padding: 14px 16px;
         .el-breadcrumb__inner{
             color: #eee;
         }

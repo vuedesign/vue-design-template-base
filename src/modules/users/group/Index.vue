@@ -16,40 +16,25 @@
                 </li>
                 <li>
                     <el-select style="width: 110px" v-model="type" placeholder="请选择" :size="FORM.SIZE">
-                        <el-option label="超级管理员" value="supper"></el-option>
-                        <el-option label="管理员" value="admin"></el-option>
+                        <el-option
+                            v-for="(item, index) in typeList"
+                            :label="item.label"
+                            :value="item.value"
+                            :key="index"
+                        />
                     </el-select>
                 </li>
             </ul>
         </vued-filter>
-        <el-table
-            :size="FORM.SIZE"
-            v-loading="loading"
-            :data="data"
-            style="width: 100%;border-radius: 3px;">
-            <el-table-column
-                prop="name"
-                label="用户组"
-                width="180">
+        <el-table :size="FORM.SIZE" v-loading="loading" :data="data" style="width: 100%;">
+            <el-table-column prop="name" label="用户组" width="180">
             </el-table-column>
-            <el-table-column
-                prop="type"
-                label="类型"
-                width="180">
+            <el-table-column prop="type" label="类型" width="180">
+                <template slot-scope="scope">{{ typeMap[scope.row.type] }}</template>
             </el-table-column>
-            <el-table-column
-                prop="address"
-                label="地址">
-            </el-table-column>
-            <el-table-column
-                prop="date"
-                label="日期"
-                width="180">
-            </el-table-column>
-            <el-table-column
-                fixed="right"
-                label="操作"
-                width="140">
+            <el-table-column prop="address" label="地址" />
+            <el-table-column prop="date" label="日期" width="180" />
+            <el-table-column fixed="right" label="操作" width="140">
                 <template slot-scope="scope">
                     <el-button @click="handleViewClick(scope.row)" type="text" size="small">查看</el-button>
                     <el-button @click="handleEditClick(scope.row)" type="text" size="small">编辑</el-button>
@@ -72,10 +57,17 @@
 <script>
 import { mapGetters } from 'vuex';
 import { filtersCommit } from '@/vued';
+import {
+    typeList,
+    typeMap
+} from './constants';
 
 export default {
     data() {
-        return {};
+        return {
+            typeList,
+            typeMap
+        };
     },
     computed: {
         ...mapGetters('users/group', [

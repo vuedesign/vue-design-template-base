@@ -4,9 +4,10 @@
 
 export default {
     filters: {
+        region: -1,
+        name: '',
         page: 1,
-        size: 20,
-        search: ''
+        size: 20
     },
     list: [],
     item: {},

@@ -12,7 +12,8 @@ const state = {
     show: false,
     title: '',
     filters: {
-        search: ''
+        search: '',
+        type: -1
     },
     data: [],
     total: 0,

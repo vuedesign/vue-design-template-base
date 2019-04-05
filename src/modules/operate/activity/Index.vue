@@ -5,6 +5,16 @@
                 <li><el-button type="primary" :size="FORM.SIZE"  @click="handleAddClick">新增</el-button></li>
             </ul>
             <ul class="right">
+                <li>
+                    <el-select style="width: 110px" v-model="region" placeholder="请选择" :size="FORM.SIZE">
+                        <el-option
+                            v-for="(item, index) in regionList"
+                            :label="item.label"
+                            :value="item.value"
+                            :key="index"
+                        />
+                    </el-select>
+                </li>
                 <li><el-input v-model="name" type="text" :size="FORM.SIZE"  /></li>
             </ul>
         </vued-filter>
@@ -12,23 +22,35 @@
             :size="FORM.SIZE"
             :data="list"
             style="width: 100%; border-radius: 3px;">
-            <el-table-column label="缩略图" min-width="64" >
+            <el-table-column label="缩略图" min-width="84" >
                 <template slot-scope="scope">
                     <span><img :src="scope.row.thumb" /></span>
                 </template>
             </el-table-column>
-            <el-table-column prop="name" label="活动名称" min-width="120" />
-            <el-table-column prop="region" label="活动区域" min-width="120" />
+            <el-table-column prop="name" label="活动名称" min-width="160" />
+            <el-table-column prop="region" label="活动区域" min-width="80">
+                <template slot-scope="scope">
+                    {{ regionMap[scope.row.region] }}
+                </template>
+            </el-table-column>
             <el-table-column prop="date" label="活动时间" min-width="180">
                 <template slot-scope="scope">
                     {{ scope.row.date }} {{ scope.row.time }}
                 </template>
             </el-table-column>
-            <el-table-column prop="delivery" label="即时配送"></el-table-column>
-            <el-table-column prop="type" label="活动性质"></el-table-column>
+            <el-table-column prop="delivery" label="即时配送">
+                <template slot-scope="scope">
+                    <el-switch v-model="scope.row.delivery" disabled />
+                </template>
+            </el-table-column>
+            <el-table-column prop="type" label="活动性质" min-width="260">
+                <template slot-scope="scope">
+                    {{ scope.row.type.map(item => typeMap[item]).join(',') }}
+                </template>
+            </el-table-column>
             <el-table-column prop="resource" label="特殊资源"></el-table-column>
             <el-table-column prop="desc" label="活动形式"></el-table-column>
-            <el-table-column fixed="right" label="操作" width="140">
+            <el-table-column fixed="right" label="操作" width="140" align="center">
                 <template slot-scope="scope">
                     <el-button @click="handleViewClick(scope.row)" type="text" size="small">查看</el-button>
                     <el-button @click="handleEditClick(scope.row)" type="text" size="small">编辑</el-button>
@@ -55,11 +77,21 @@
 <script>
 import { mapGetters } from 'vuex';
 import { filtersCommit } from '@/vued';
+import {
+    regionList,
+    regionMap,
+    typeList,
+    typeMap
+} from './constants';
 
 export default {
     name: 'activity-list',
     data() {
         return {
+            regionList,
+            regionMap,
+            typeList,
+            typeMap,
             params: this.$route.params
         };
     },
@@ -69,7 +101,8 @@ export default {
             'list',
             'total'
         ]),
-        name: filtersCommit('operate/activity', 'name')
+        name: filtersCommit('operate/activity', 'name'),
+        region: filtersCommit('operate/activity', 'region')
     },
     watch: {
         filters: {

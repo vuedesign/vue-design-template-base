@@ -24,13 +24,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @import "~styles/variables.scss";
     .vued-t-shape{
         height: 100%;
         width: 100%;
     }
     .vued-t-shape-header{
-        height: 48px;
+        height: $header-bar-size;
         position: absolute;
         top: 0;
         left: 0;
@@ -39,7 +40,7 @@ export default {
     }
     .vued-t-shape-body{
         position: absolute;
-        top: 48px;
+        top: $header-bar-size;
         width: 100%;
         left: 0;
         bottom: 0;

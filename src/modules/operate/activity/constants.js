@@ -1,3 +1,5 @@
+import { list2map } from '@/vendor/utils';
+
 export const rules = {
     thumb: [
         { required: true, message: '请选择活动区域', trigger: 'change' }
@@ -25,3 +27,43 @@ export const rules = {
         { required: true, message: '请填写活动形式', trigger: 'blur' }
     ]
 };
+
+export const regionList = [
+    {
+        label: '全部',
+        value: -1
+    },
+    {
+        label: '区域一',
+        value: 1
+    },
+    {
+        label: '区域二',
+        value: 2
+    },
+    {
+        label: '区域三',
+        value: 3
+    }
+];
+export const regionMap = list2map(regionList);
+
+export const typeList = [
+    {
+        label: '美食/餐厅线上活动',
+        key: 1
+    },
+    {
+        label: '地推活动',
+        key: 2
+    },
+    {
+        label: '线下主题活动',
+        key: 3
+    },
+    {
+        label: '单纯品牌曝光',
+        key: 3
+    }
+];
+export const typeMap = list2map(typeList, { key: 'key', value: 'label' });

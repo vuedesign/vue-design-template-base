@@ -6,13 +6,13 @@ module.exports = {
             [listKey]: [
                 {
                     'id|+1': 1,
-                    name: '@cname()',
+                    name: '@csentence(8,10)',
                     thumb: '@image("64")',
-                    region: '@cname()',
+                    region: '@integer(1,3)',
                     date: '@date()',
                     time: '@time()',
-                    delivery: false,
-                    type: [1, 2, 3, 4],
+                    delivery: '@boolean',
+                    type: '@range(1,4)',
                     resource: '@cname()',
                     desc: '@cname(20)'
                 }

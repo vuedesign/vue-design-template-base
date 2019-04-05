@@ -4,10 +4,10 @@ module.exports = {
             'list|20': [
                 {
                     'id|+1': 1,
-                    date: '@DATETIME',
-                    name: '@NAME',
-                    type: ['supper', 'admin'],
-                    address: '上海市普陀区金沙江路 1518 弄'
+                    date: '@datetime',
+                    name: '@cname',
+                    type: '@integer(1, 2)',
+                    address: '@csentence(15,20)'
                 }
             ]
         }

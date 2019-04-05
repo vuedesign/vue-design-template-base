@@ -83,6 +83,7 @@ export default {
 </script>
 
 <style lang="scss">
+    @import "~styles/variables.scss";
     .vued-aside{
         height: 100%;
     }
@@ -94,7 +95,7 @@ export default {
             background-color: transparent;
         }
         &.el-menu--collapse{
-            width: 48px;
+            width: $aside-bar-size;
         }
         .el-menu-item{
             &.is-active {
@@ -107,12 +108,27 @@ export default {
         }
         & > .el-menu-item,
         & > .el-submenu > .el-submenu__title{
-            height: 48px;
-            line-height: 48px;
+            height: $aside-bar-size;
+            line-height: $aside-bar-size;
             padding: 0 11px !important;
         }
         & > .el-menu-item > .el-tooltip {
-            padding: 0 11px !important;
+            padding: 0 10px !important;
+        }
+        .el-menu-item{
+            height: $aside-bar-size !important;
+            line-height: $aside-bar-size !important;
+        }
+        .el-submenu__title{
+            i,
+            span{
+                display: inline-block;
+                height: 16px;
+                line-height: 16px;
+            }
+            span{
+                padding-top: 1px;
+            }
         }
     }
     .vued-aside-menu{

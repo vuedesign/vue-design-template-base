@@ -111,6 +111,7 @@ export default {
 </script>
 
 <style lang="scss">
+    @import "~styles/variables.scss";
     .vued-header{
         height: 100%;
         background-color: #409EFF;
@@ -124,7 +125,7 @@ export default {
             margin: 0;
             display: inline-block;
             font-size: 20px;
-            padding: 13px 16px 0 16px;
+            padding: 9px 16px 0 16px;
             color: #fff;
             font-weight: 700;
             cursor: pointer;
@@ -133,8 +134,8 @@ export default {
     .vued-header-nav,
     .vued-header-left ul{
         float: left;
-        line-height: 48px;
-        height: 48px;
+        line-height: $header-bar-size;
+        height: $header-bar-size;
         li{
             cursor: pointer;
             float: left;
@@ -144,15 +145,15 @@ export default {
     .vued-user{
         float: right;
         margin-left: 10px;
-        padding: 10px 16px;
+        padding: 6px 6px 6px 16px;
         cursor: pointer;
         > span{
             display: block;
-            height: 28px;
-            line-height: 28px;
+            height: 24px;
+            line-height: 24px;
         };
         .avatar{
-            display: inline-block;
+            display: block;
             vertical-align: middle;
             width: 28px;
             height: 28px;
