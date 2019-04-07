@@ -4,9 +4,9 @@ module.exports = {
             'list|20': [
                 {
                     'id|+1': 1,
-                    date: '@datetime',
                     name: '@cname',
-                    type: '@integer(1, 2)',
+                    birthday: '@date',
+                    email: '@email',
                     address: '@csentence(15,20)'
                 }
             ]

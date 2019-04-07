@@ -24,7 +24,7 @@
             style="width: 100%; border-radius: 3px;">
             <el-table-column label="缩略图" min-width="84" >
                 <template slot-scope="scope">
-                    <span><img :src="scope.row.thumb" /></span>
+                    <span class="thumb"><img :src="scope.row.thumb" /></span>
                 </template>
             </el-table-column>
             <el-table-column prop="name" label="活动名称" min-width="160" />
@@ -154,6 +154,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+    .thumb{
+        display: block;
+        img{
+            display: block;
+        }
+    }
 </style>

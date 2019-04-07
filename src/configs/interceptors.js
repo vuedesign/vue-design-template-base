@@ -3,6 +3,7 @@
  */
 
 import { store } from '@/vued';
+import { SUCCESS_STATUS_CODE } from '@/configs/constants';
 
 // let token = 'VHJK324567YU345667POIU';
 export const isTimestampDisabled = false;
@@ -13,9 +14,6 @@ export const isTimestampDisabled = false;
  * @returns {*}
  */
 export const ajaxRequestSuccess = (config) => {
-    if (localStorage.getItem('token')) {
-        config.headers.common['Authorization'] = localStorage.getItem('token');
-    }
     return config;
 };
 
@@ -34,13 +32,10 @@ export const ajaxRequestFailure = (error) => {
  * @returns {*}
  */
 export const ajaxResponseSuccess = (response) => {
-    console.log('response', response);
-    if (response.code !== 1) {
-        // router.push({
-        //     name: 'auth-login'
-        // });
+    if (response.status === SUCCESS_STATUS_CODE) {
+        return response.data;
     }
-    return response;
+    return Promise.reject(response);
 };
 
 /**
@@ -54,6 +49,7 @@ export const ajaxResponseFailure = (error) => {
 
 export const routerBeforeEach = ({ to, from, next }) => {
     store.commit('global/BREADCRUMB', to);
+    store.commit('global/SEO_TITLE', to);
     next();
 };
 

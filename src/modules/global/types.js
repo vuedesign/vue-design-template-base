@@ -7,3 +7,4 @@ export const ASIDE_MENU = 'ASIDE_MENU';
 export const ASIDE_ACTIVE = 'ASIDE_ACTIVE';
 export const PERMISSION = 'PERMISSION';
 export const ACTIONS = 'ACTIONS';
+export const SEO_TITLE = 'SEO_TITLE';
