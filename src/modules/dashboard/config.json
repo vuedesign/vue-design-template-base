@@ -1,9 +1,5 @@
 {
     "name": "dashboard",
-<<<<<<< HEAD
-    "label": "仪表板"
-=======
     "label": "用户中心",
     "children": []
->>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
 }

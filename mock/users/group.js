@@ -11,8 +11,6 @@ module.exports = {
                 }
             ]
         }
-<<<<<<< HEAD
-=======
     },
     '/users/group/:groupId GET': cxt => {
         return {
@@ -22,6 +20,5 @@ module.exports = {
             type: '@integer(1,2)',
             address: '@csentence(15,20)'
         };
->>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
     }
 };
