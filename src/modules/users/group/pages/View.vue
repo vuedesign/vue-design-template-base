@@ -21,7 +21,7 @@
             <dl class="detail" v-for="(value, key) in formData" :key="key">
                 <dt>{{ key }}: </dt>
                 <dd>{{ value }}</dd>
-            </dl>   
+            </dl>
         </el-dialog>
     </div>
 </template>

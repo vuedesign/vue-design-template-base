@@ -59,7 +59,7 @@ import {
 } from '../constants';
 
 export default {
-    name: 'Group',
+    name: 'users-group',
     data() {
         return {
             typeList,

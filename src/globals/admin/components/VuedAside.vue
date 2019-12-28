@@ -73,12 +73,13 @@ export default {
             this.isCollapse = !this.isCollapse;
         },
         handleSelect(index, indexPath) {
+            console.log('index', index, this.$router);
             this.$router.push({
                 name: index,
                 params: {
                     page: 1
                 }
-            });
+            }).catch(err => console.log(err));
         }
     }
 };
