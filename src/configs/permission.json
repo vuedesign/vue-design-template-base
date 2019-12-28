@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "parentId": 0,
+        "name": "dashboard",
+        "label": "仪表板",
+        "icon": "el-icon-menu",
+        "url": "/admin/dashboard",
+        "menu": true
+    },
+    {
+        "id": 2,
+        "parentId": 0,
+        "name": "users",
+        "label": "用户中心",
+        "icon": "el-icon-share",
+        "menu": true
+    },
+    {
+        "id": 3,
+        "parentId": 2,
+        "name": "users-group",
+        "label": "用户组",
+        "icon": "",
+        "menu": true,
+        "url": "/admin/users/group/1",
+        "actions": ["EDIT", "ADD", "DELETE", "VIEW"]
+    },
+    {
+        "id": 4,
+        "parentId": 2,
+        "name": "users-group",
+        "label": "用户",
+        "icon": "",
+        "url": "/admin/users/user",
+        "menu": true,
+        "actions": ["EDIT", "ADD", "VIEW"]
+    },
+    {
+        "id": 5,
+        "parentId": 3,
+        "name": "users-group-update",
+        "label": "编辑",
+        "icon": "",
+        "menu": false
+    },
+    {
+        "id": 6,
+        "parentId": 3,
+        "name": "users-group-add",
+        "label": "新增",
+        "icon": "",
+        "menu": false
+    }
+]

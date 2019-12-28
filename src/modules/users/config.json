@@ -1,0 +1,8 @@
+{
+    "name": "users",
+    "label": "用户中心",
+    "children": [
+        "group",
+        "user"
+    ]
+}
