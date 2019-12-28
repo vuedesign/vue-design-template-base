@@ -5,6 +5,11 @@
 ## Build Setup
 
 ``` bash
+
+```
+
+app dir
+
 - config/
 - dist/
 - mock/
@@ -21,5 +26,3 @@
  - App.vue
  - main.js
 - static/
-
-```
