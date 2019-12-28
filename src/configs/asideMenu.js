@@ -2,7 +2,7 @@ export default [
     {
         name: 'dashboard',
         label: '仪表板',
-        icon: 'dashboard'
+        icon: 'el-icon-s-grid'
     },
     {
         name: 'users',

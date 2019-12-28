@@ -60,7 +60,6 @@ export default {
     },
     created() {
         this.$store.commit('admin/ASIDE_ACTIVE', this.$route.name);
-        console.log('asideMenu = ', this.asideMenu);
     },
     methods: {
         handleOpen(key, keyPath) {
