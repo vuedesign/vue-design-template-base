@@ -14,15 +14,15 @@ app dir
 - dist/
 - mock/
 - src/
- - assets/
+  - assets/
     - styles/
- - configs/
- - globals/
-  - admin
-  - error
- - modules/
-  - dashoard/
- - vendors/
- - App.vue
- - main.js
+  - configs/
+  - globals/
+    - admin
+    - error
+  - modules/
+    - dashoard/
+  - vendors/
+  - App.vue
+  - main.js
 - static/
