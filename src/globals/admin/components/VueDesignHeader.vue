@@ -4,7 +4,7 @@
             <h1 @click="handleLogo">VueDesign Admin</h1>
         </div>
         <div class="vue-design-header-left">
-            <vue-design-breadcrumb slot="breadcrumb"></vue-design-breadcrumb>
+            <vue-design-breadcrumb slot="breadcrumb" />
         </div>
         <div class="vue-design-header-right">
             <ul class="vue-design-header-nav">
@@ -64,11 +64,11 @@
                         </dl>
                         <ul>
                             <li class="setting" @click="handleSetting">
-                                <vued-iconfont type="setting" />
+                                <vue-design-iconfont type="setting" />
                                 <span>设置</span>
                             </li>
                             <li class="exit" @click="handleExit">
-                                <vued-iconfont type="exit" />
+                                <vue-design-iconfont type="exit" />
                                 <span>退出</span>
                             </li>
                         </ul>

@@ -17,7 +17,7 @@
 
 <script>
 export default {
-    name: 'vuvue-designed-t-shape',
+    name: 'vue-design-t-shape',
     created() {
         document.getElementsByTagName('html')[0].setAttribute('class', 'admin');
     }

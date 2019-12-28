@@ -16,7 +16,7 @@
                         :key="key"
                     >
                         <template slot="title">
-                            <vued-iconfont :type="item.icon" />
+                            <vue-design-iconfont :type="item.icon" />
                             <span>{{ item.label }}</span>
                         </template>
                         <el-menu-item
@@ -27,7 +27,7 @@
                         </el-menu-item>
                     </el-submenu>
                     <el-menu-item v-else :index="item.name" :key="key">
-                        <vued-iconfont :type="item.icon" />
+                        <vue-design-iconfont :type="item.icon" />
                         <span slot="title">{{ item.label }}</span>
                     </el-menu-item>
                 </template>
