@@ -15,7 +15,7 @@ const state = {
 
 const actions = {
     findMenu: ({ commit }) => new Promise((resolve, reject) => {
-        const data = config('menu.json');
+        const data = config('menuAside.json');
         commit(types.ASIDE_MENU, data);
     }),
     permission: ({ commit }) => new Promise((resolve, reject) => {

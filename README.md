@@ -10,9 +10,9 @@
 
 app dir
 
-- config/
-- dist/
-- mock/
+- config/ # 发布配置
+- dist/ 
+- mock/ # mock
 - src/
   - assets/
     - styles/

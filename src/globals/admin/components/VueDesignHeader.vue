@@ -9,7 +9,7 @@
         <div class="vue-design-header-right">
             <ul class="vue-design-header-nav">
                 <li
-                    v-for="(item, index) in headerMenu"
+                    v-for="(item, index) in menuHeader"
                     v-if="item.type !== 'MORE'"
                     :index="item.name"
                     :key="index"
@@ -25,7 +25,7 @@
                         width="200"
                         trigger="click">
                         <div class="vue-design-header-right-more">
-                            <dl v-for="(item, index) in headerMenu"
+                            <dl v-for="(item, index) in menuHeader"
                                 v-if="item.type === 'MORE'"
                                 :key="index"
                             >
@@ -88,7 +88,7 @@ export default {
     components: { VueDesignBreadcrumb },
     data() {
         return {
-            headerMenu: config('headerMenu.js')
+            menuHeader: config('menuHeader.json')
         };
     },
     methods: {

@@ -1,5 +1,5 @@
 import { store } from 'vue-design-core';
-import { SUCCESS_STATUS_CODE } from '@/configs/constants';
+import { SUCCESS_STATUS_CODE } from './constants';
 
 // let token = 'VHJK324567YU345667POIU';
 export const isTimestampDisabled = false;
