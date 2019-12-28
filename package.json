@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "vued-template",
   "version": "1.0.0",
   "description": "A Vue.js project",
@@ -19,6 +20,27 @@
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
+=======
+  "name": "vue-design-template-admin",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "n.see <gooarter@gmail.com>",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config node_modules/vue-design-build",
+    "start": "npm run dev",
+    "lint": "eslint --ext .js,.vue src",
+    "build": "node node_modules/vue-design-build/core/build.js"
+  },
+  "dependencies": {
+    "element-ui": "^2.13.0",
+    "js-cookie": "^2.2.1",
+    "list-to-tree": "^2.2.3",
+    "vue": "^2.6.11",
+    "vue-design-build": "^0.1.0",
+    "vue-design-core": "^0.1.4",
+    "vuex": "^3.1.2"
+>>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -28,30 +50,46 @@
     "babel-loader": "^7.1.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.22.0",
+<<<<<<< HEAD
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-env": "^1.7.0",
+=======
+    "babel-plugin-transform-vue-jsx": "^3.5.0",
+    "babel-preset-env": "^1.3.2",
+>>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^11.3.0",
+<<<<<<< HEAD
     "eslint-config-standard": "^12.0.0",
+=======
+>>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-loader": "^1.7.1",
     "eslint-plugin-import": "^2.7.0",
+<<<<<<< HEAD
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+=======
+>>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
     "eslint-plugin-vue": "^4.0.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
+<<<<<<< HEAD
     "mockjs": "^1.0.1-beta3",
     "node-notifier": "^5.1.2",
     "node-sass": "^4.11.0",
+=======
+    "node-notifier": "^5.1.2",
+    "node-sass": "^4.13.0",
+>>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "ora": "^1.2.0",
     "portfinder": "^1.0.13",
@@ -59,7 +97,11 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+<<<<<<< HEAD
     "sass-loader": "^7.1.0",
+=======
+    "sass-loader": "^7.3.1",
+>>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",

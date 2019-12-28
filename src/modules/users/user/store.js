@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { to } from '@/vued';
+=======
+import { to } from 'vue-design-core';
+>>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
 import * as api from './api';
 
 const types = {

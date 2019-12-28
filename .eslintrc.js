@@ -1,6 +1,7 @@
 // https://eslint.org/docs/user-guide/configuring
 
 module.exports = {
+<<<<<<< HEAD
     root: true,
     parserOptions: {
         parser: 'babel-eslint'
@@ -30,4 +31,67 @@ module.exports = {
         // allow debugger during development
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
     }
+=======
+  root: true,
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
+  env: {
+    browser: true,
+  },
+  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+  extends: ['plugin:vue/essential', 'airbnb-base'],
+  // required to lint *.vue files
+  plugins: [
+    'vue'
+  ],
+  // check if imports actually resolve
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: 'node_modules/vue-design-build/core/webpack.base.conf.js'
+      }
+    }
+  },
+  // add your custom rules here
+  rules: {
+    'no-unused-expressions': 'off',
+    'object-shorthand': 'off',
+    'global-require': 'off',
+    'arrow-parens': 'off',
+    'max-len': 'off',
+    'no-shadow': 'off',
+    'arrow-body-style': ["error", "as-needed"],
+    'import/prefer-default-export': 'off',
+    'no-unused-vars': [
+      "error", {
+        "args": "none",
+        "ignoreRestSiblings": true
+      }
+    ],
+    'indent': ['error', 4],
+    'no-useless-constructor': 'off',
+    'semi': ['error', 'always'],
+    'space-before-function-paren': ['error', 'never'],
+    // allow async-await
+    'generator-star-spacing': 'off',
+    'no-console': 'off',
+    'comma-dangle': ['error', 'never'],
+    // don't require .vue extension when importing
+    'import/extensions': ['error', 'always', {
+      js: 'never',
+      vue: 'never'
+    }],
+    // disallow reassignment of function parameters
+    // disallow parameter object manipulation except for specific exclusions
+    'no-param-reassign': 'off',
+    // allow optionalDependencies
+    'import/no-extraneous-dependencies': ['error', {
+      optionalDependencies: ['test/unit/index.js']
+    }],
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+  }
+>>>>>>> 2bf4d988353d0982800f43f5d540cc912e298988
 }
