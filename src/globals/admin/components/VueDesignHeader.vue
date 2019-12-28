@@ -1,13 +1,13 @@
 <template>
-    <div class="vued-header">
-        <div class="vued-logo">
+    <div class="vue-design-header">
+        <div class="vue-design-logo">
             <h1 @click="handleLogo">VueDesign Admin</h1>
         </div>
-        <div class="vued-header-left">
-            <vued-breadcrumb slot="breadcrumb"></vued-breadcrumb>
+        <div class="vue-design-header-left">
+            <vue-design-breadcrumb slot="breadcrumb"></vue-design-breadcrumb>
         </div>
-        <div class="vued-header-right">
-            <ul class="vued-header-nav">
+        <div class="vue-design-header-right">
+            <ul class="vue-design-header-nav">
                 <li
                     v-for="(item, index) in headerMenu"
                     v-if="item.type !== 'MORE'"
@@ -16,7 +16,7 @@
                     @click="handleHeaderNav(item, index)"
                 >
                     <el-tooltip class="item" effect="dark" :content="item.label" placement="bottom">
-                        <span class="menu-btn"><vued-iconfont :type="item.icon"></vued-iconfont></span>
+                        <span class="menu-btn"><vue-design-iconfont :type="item.icon" /></span>
                     </el-tooltip>
                 </li>
                 <li>
@@ -24,16 +24,16 @@
                         placement="bottom"
                         width="200"
                         trigger="click">
-                        <div class="vued-header-right-more">
+                        <div class="vue-design-header-right-more">
                             <dl v-for="(item, index) in headerMenu"
                                 v-if="item.type === 'MORE'"
                                 :key="index"
                             >
-                                <dt><vued-iconfont :type="item.icon" /></dt>
+                                <dt><vue-design-iconfont :type="item.icon" /></dt>
                                 <dd>{{ item.label }}</dd>
                             </dl>
                         </div>
-                        <span class="menu-btn" slot="reference"><vued-iconfont type="menu-more"></vued-iconfont></span>
+                        <span class="menu-btn" slot="reference"><vue-design-iconfont type="menu-more" /></span>
                     </el-popover>
                 </li>
                 <li>
@@ -43,18 +43,18 @@
                         width="200"
                         trigger="click"
                         content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-                        <span class="menu-btn" slot="reference"><vued-iconfont type="message"></vued-iconfont></span>
+                        <span class="menu-btn" slot="reference"><vue-design-iconfont type="message" /></span>
                     </el-popover>
                 </li>
             </ul>
-            <div class="vued-user">
+            <div class="vue-design-user">
                 <el-popover
                     placement="bottom"
                     width="240"
                     trigger="click"
                 >
                     <span class="avatar" slot="reference"></span>
-                    <div class="vued-user-popover">
+                    <div class="vue-design-user-popover">
                         <dl>
                             <dt><span class="avatar-big"></span></dt>
                             <dd>
@@ -81,11 +81,11 @@
 
 <script>
 import { config } from 'vue-design-core';
-import VuedBreadcrumb from './VuedBreadcrumb';
+import VueDesignBreadcrumb from './VueDesignBreadcrumb';
 
 export default {
-    name: 'vued-header',
-    components: { VuedBreadcrumb },
+    name: 'vue-design-header',
+    components: { VueDesignBreadcrumb },
     data() {
         return {
             headerMenu: config('headerMenu.js')
@@ -112,11 +112,11 @@ export default {
 
 <style lang="scss">
     @import "~@assets/styles/variables.scss";
-    .vued-header{
+    .vue-design-header{
         height: 100%;
         background-color: #409EFF;
     }
-    .vued-logo{
+    .vue-design-logo{
         height: 100%;
         float: left;
         text-align: center;
@@ -131,8 +131,8 @@ export default {
             cursor: pointer;
         }
     }
-    .vued-header-nav,
-    .vued-header-left ul{
+    .vue-design-header-nav,
+    .vue-design-header-left ul{
         float: left;
         line-height: $header-bar-size;
         height: $header-bar-size;
@@ -142,7 +142,7 @@ export default {
             padding: 0 11px;
         }
     }
-    .vued-user{
+    .vue-design-user{
         float: right;
         margin-left: 10px;
         padding: 6px 6px 6px 16px;
@@ -168,7 +168,7 @@ export default {
             margin-left: 4px;
         }
     }
-    .vued-user-popover{
+    .vue-design-user-popover{
         dl,
         ul{
             &:after{
@@ -226,7 +226,7 @@ export default {
             }
         }
     }
-    .vued-header-right-more{
+    .vue-design-header-right-more{
         &:after{
             content: '';
             display: block;
@@ -252,7 +252,7 @@ export default {
             }
         }
     }
-    .vued-header-right{
+    .vue-design-header-right{
         float: right;
         line-height: 48px;
         height: 48px;
@@ -280,7 +280,7 @@ export default {
             }
         }
     }
-    .vued-header-left{
+    .vue-design-header-left{
         float: left;
     }
 </style>

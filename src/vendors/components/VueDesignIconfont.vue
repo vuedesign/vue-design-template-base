@@ -4,7 +4,7 @@
 
 <script>
 export default {
-    name: 'vued-iconfont',
+    name: 'vue-design-iconfont',
     props: {
         type: {
             type: String,

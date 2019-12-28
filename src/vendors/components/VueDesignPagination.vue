@@ -1,18 +1,18 @@
 <template>
-    <div class="vued-pagination">
+    <div class="vue-design-pagination">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'vued-pagination'
+    name: 'vue-design-pagination'
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    .vued-pagination{
+    .vue-design-pagination{
         text-align: right;
         padding-top: 20px;
         margin: 0 -10px;

@@ -1,18 +1,18 @@
 <template>
-    <div class="vued-filter">
+    <div class="vue-design-filter">
         <slot></slot>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'vued-filter'
+    name: 'vue-design-filter'
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    .vued-filter{
+    .vue-design-filter{
         margin-bottom: 20px;
         background-color: #eef5f97a;
         padding: 0 5px 5px 5px;

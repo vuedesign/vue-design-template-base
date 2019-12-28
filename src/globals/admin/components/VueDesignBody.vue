@@ -1,17 +1,17 @@
 <template>
-    <div class="vued-body">
+    <div class="vue-design-body">
         <router-view/>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'vued-body'
+    name: 'vue-design-body'
 };
 </script>
 
 <style>
-    .vued-body{
+    .vue-design-body{
         height: auto;
         padding: 10px 10px;
     }

@@ -1,27 +1,27 @@
 <template>
-    <vued-t-shape>
-        <vued-header slot="header"></vued-header>
-        <vued-aside slot="aside" v-if="asideMenu"></vued-aside>
-        <vued-body slot="body">
+    <vue-design-t-shape>
+        <vue-design-header slot="header" />
+        <vue-design-aside slot="aside" v-if="asideMenu" />
+        <vue-design-body slot="body">
             <router-view/>
-        </vued-body>
-    </vued-t-shape>
+        </vue-design-body>
+    </vue-design-t-shape>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import VuedTShape from '../components/VuedTShape';
-import VuedAside from '../components/VuedAside';
-import VuedHeader from '../components/VuedHeader';
-import VuedBody from '../components/VuedBody';
+import VueDesignTShape from '../components/VueDesignTShape';
+import VueDesignAside from '../components/VueDesignAside';
+import VueDesignHeader from '../components/VueDesignHeader';
+import VueDesignBody from '../components/VueDesignBody';
 
 export default {
     name: 'vued-admin',
     components: {
-        VuedTShape,
-        VuedAside,
-        VuedHeader,
-        VuedBody
+        VueDesignTShape,
+        VueDesignAside,
+        VueDesignHeader,
+        VueDesignBody
     },
     computed: {
         ...mapGetters('admin', [

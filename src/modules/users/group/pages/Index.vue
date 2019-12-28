@@ -1,7 +1,7 @@
 
 <template>
     <div class="users-group-list">
-        <vued-filter>
+        <vue-design-filter>
             <ul class="left">
                 <li>
                     <el-button type="primary" :size="FORM.SIZE" @click="handleAddClick">新增</el-button>
@@ -22,7 +22,7 @@
                     </el-select>
                 </li>
             </ul>
-        </vued-filter>
+        </vue-design-filter>
         <el-table :data="data" style="width: 100%;">
             <el-table-column prop="name" label="用户组" width="180">
             </el-table-column>
@@ -40,13 +40,13 @@
             </el-table-column>
             <div slot="empty" class="table-empty">===============</div>
         </el-table>
-        <vued-pagination>
+        <vue-design-pagination>
             <pagination
                 @current-change="handleCurrentChange"
                 :current-page="filters.page"
                 :total="total"
             ></pagination>
-        </vued-pagination>
+        </vue-design-pagination>
         <router-view />
     </div>
 </template>

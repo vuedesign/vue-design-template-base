@@ -1,13 +1,13 @@
 <template>
     <div class="operate-activity-list">
-        <vued-filter>
+        <vue-design-filter>
             <ul class="left">
                 <li><el-button type="primary" :size="FORM.SIZE" @click="handleAddClick">新增</el-button></li>
             </ul>
             <ul class="right">
                 <li><el-input type="text" :size="FORM.SIZE" /></li>
             </ul>
-        </vued-filter>
+        </vue-design-filter>
         <el-table
             :size="FORM.SIZE"
             :data="data"
@@ -24,13 +24,13 @@
                 </template>
             </el-table-column>
         </el-table>
-        <vued-pagination>
+        <vue-design-pagination>
             <el-pagination
                 background
                 layout="prev, pager, next"
                 :total="1000">
             </el-pagination>
-        </vued-pagination>
+        </vue-design-pagination>
         <router-view />
     </div>
 </template>

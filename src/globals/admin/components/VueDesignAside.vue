@@ -1,9 +1,9 @@
 <template>
-    <div class="vued-aside">
-        <div class="vued-aside-menu">
+    <div class="vue-design-aside">
+        <div class="vue-design-aside-menu">
             <el-menu
                 :default-active="asideActive"
-                class="vued-aside-menu-vertical"
+                class="vue-design-aside-menu-vertical"
                 :collapse="isCollapse"
                 @open="handleOpen"
                 @close="handleClose"
@@ -43,7 +43,7 @@
 import { mapGetters } from 'vuex';
 
 export default {
-    name: 'vued-aside',
+    name: 'vue-design-aside',
     data() {
         return {
             isCollapse: false
@@ -86,10 +86,10 @@ export default {
 
 <style lang="scss">
     @import "~@assets/styles/variables.scss";
-    .vued-aside{
+    .vue-design-aside{
         height: 100%;
     }
-    .vued-aside-menu-vertical{
+    .vue-design-aside-menu-vertical{
         width: 200px;
         &.el-menu,
         .el-menu{
@@ -133,7 +133,7 @@ export default {
             }
         }
     }
-    .vued-aside-menu{
+    .vue-design-aside-menu{
         overflow-x: hidden;
         height: 100%;
     }

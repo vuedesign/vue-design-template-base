@@ -1,5 +1,5 @@
 <template>
-    <div class="vued-breadcrumb">
+    <div class="vue-design-breadcrumb">
         <el-breadcrumb separator="/">
             <el-breadcrumb-item
                 v-for="(item, index) in breadcrumbs"
@@ -13,13 +13,13 @@
 import { mapGetters } from 'vuex';
 
 export default {
-    name: 'vued-breadcrumb',
+    name: 'vue-design-breadcrumb',
     computed: mapGetters('admin', ['breadcrumbs'])
 };
 </script>
 
 <style lang="scss">
-    .vued-breadcrumb{
+    .vue-design-breadcrumb{
         width: 100%;
         padding: 14px 16px;
         .el-breadcrumb__inner{
