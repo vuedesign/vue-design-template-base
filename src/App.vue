@@ -1,13 +1,21 @@
 <template>
     <div id="app">
-        <router-view/>
+        <loading>
+            <router-view />
+        </loading>
     </div>
 </template>
 
 <script>
 export default {
     name: 'App',
-    created() {}
+    data() {
+        return {};
+    },
+    async created() {
+        await this.$store.dispatch('admin/findMenu');
+        await this.$store.commit('loading/UPDATE_LOADING_STATE', true);
+    }
 };
 </script>
 

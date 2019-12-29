@@ -6,7 +6,6 @@ import * as types from './types';
 
 const state = {
     branchTitle: 'VueDesign',
-    breadcrumbs: [],
     asideMenu: [],
     permission: [],
     actions: [],
@@ -15,32 +14,21 @@ const state = {
 
 const actions = {
     findMenu: ({ commit }) => new Promise((resolve, reject) => {
-        const data = config('menuAside.json');
-        commit(types.ASIDE_MENU, data);
+        const menuAsideData = config('menuAside.json');
+        commit(types.ASIDE_MENU, menuAsideData);
+        resolve(menuAsideData);
     }),
     permission: ({ commit }) => new Promise((resolve, reject) => {
         setTimeout(() => {
-            const data = config('permission.json');
-            // commit('PERMISSION', data);
-            const menuData = list2tree(data);
-            console.log('menuData', menuData);
-            commit(types.ASIDE_MENU, menuData);
+            const permissionData = config('permission.json');
+            const menuAsideData = list2tree(permissionData);
+            commit(types.ASIDE_MENU, menuAsideData);
+            resolve();
         }, 100);
     })
 };
 
 const mutations = {
-    [types.BREADCRUMB](state, to) {
-        const { matched } = to;
-        const breadcrumbs = [];
-        matched.forEach((item, index) => {
-            breadcrumbs.push({
-                name: item.name,
-                label: item.meta.label
-            });
-        });
-        state.breadcrumbs = breadcrumbs;
-    },
     [types.ASIDE_MENU](state, asideMenu) {
         state.asideMenu = asideMenu;
     },
@@ -60,7 +48,6 @@ const mutations = {
 };
 
 const getters = {
-    breadcrumbs: state => state.breadcrumbs,
     menu: state => state.menu,
     asideMenu: state => state.asideMenu,
     headerMenuActive: state => state.headerMenuActive,

@@ -44,7 +44,7 @@ export default {
         }
     },
     created() {
-        this.$store.dispatch('admin/findMenu');
+        // this.$store.dispatch('admin/findMenu');
         // this.$store.dispatch('global/permission');
     },
     methods: {

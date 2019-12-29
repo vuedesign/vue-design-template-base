@@ -40,8 +40,10 @@ export const ajaxResponseSuccess = (response) => {
  */
 export const ajaxResponseFailure = error => Promise.reject(error);
 
+/**
+ * @param { to, from, next } param
+ */
 export const routerBeforeEach = ({ to, from, next }) => {
-    store.commit('admin/BREADCRUMB', to);
     store.commit('admin/SEO_TITLE', to);
     next();
 };

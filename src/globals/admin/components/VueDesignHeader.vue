@@ -85,7 +85,9 @@ import VueDesignBreadcrumb from './VueDesignBreadcrumb';
 
 export default {
     name: 'vue-design-header',
-    components: { VueDesignBreadcrumb },
+    components: {
+        VueDesignBreadcrumb
+    },
     data() {
         return {
             menuHeader: config('menuHeader.json')

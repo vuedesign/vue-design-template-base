@@ -10,11 +10,34 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
     name: 'vue-design-breadcrumb',
-    computed: mapGetters('admin', ['breadcrumbs'])
+    data() {
+        return {
+            breadcrumbs: []
+        };
+    },
+    watch: {
+        $route: {
+            handler(to, from) {
+                this.updateBreadcrumb(to);
+            },
+            immediate: true
+        }
+    },
+    methods: {
+        updateBreadcrumb(to) {
+            const { matched } = to;
+            const breadcrumbs = [];
+            matched.forEach((item, index) => {
+                breadcrumbs.push({
+                    name: item.name,
+                    label: item.meta.label
+                });
+            });
+            this.breadcrumbs = breadcrumbs;
+        }
+    }
 };
 </script>
 
