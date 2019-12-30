@@ -106,7 +106,7 @@ export default {
     watch: {
         item: {
             handler(nv, ov) {
-                this.formData = Object.assign({}, this.formData, nv);
+                Object.assign(this.formData, nv);
             },
             deep: true
         }

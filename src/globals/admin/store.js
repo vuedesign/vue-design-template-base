@@ -42,7 +42,7 @@ const mutations = {
         state.asideActive = asideActive;
     },
     [types.SEO_TITLE](state, to) {
-        const label = to.meta.label;
+        const { label } = to.meta;
         document.title = `${state.branchTitle}-${label}`;
     }
 };

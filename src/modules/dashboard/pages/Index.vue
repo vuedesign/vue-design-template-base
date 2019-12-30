@@ -5,18 +5,21 @@
 <template>
     <div class="users">
         {{ moduleNumber }}
-        <img src="@assets/logo.png">
+        <img :src="logo">
         dashboard
    </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import logo from '@assets/logo.png';
 
 export default {
     name: 'dashboard',
     data() {
-        return {};
+        return {
+            logo
+        };
     },
     computed: {
         ...mapGetters('dashboard', [

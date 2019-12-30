@@ -19,12 +19,13 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: 'node_modules/vue-design-build/core/webpack.base.conf.js'
+        config: '../vue-design-build/core/webpack.base.conf.js'
       }
     }
   },
   // add your custom rules here
   rules: {
+    'object-curly-newline': 'off',
     'no-unused-expressions': 'off',
     'object-shorthand': 'off',
     'global-require': 'off',
@@ -56,9 +57,7 @@ module.exports = {
     // disallow parameter object manipulation except for specific exclusions
     'no-param-reassign': 'off',
     // allow optionalDependencies
-    'import/no-extraneous-dependencies': ['error', {
-      optionalDependencies: ['test/unit/index.js']
-    }],
+    'import/no-extraneous-dependencies': ['error', {}],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }

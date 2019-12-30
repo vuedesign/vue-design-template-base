@@ -1,9 +1,7 @@
 <template>
-    <div id="app">
-        <loading>
-            <router-view />
-        </loading>
-    </div>
+    <loading id="app">
+        <router-view />
+    </loading>
 </template>
 
 <script>

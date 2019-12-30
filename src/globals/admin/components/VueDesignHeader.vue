@@ -8,9 +8,7 @@
         </div>
         <div class="vue-design-header-right">
             <ul class="vue-design-header-nav">
-                <li
-                    v-for="(item, index) in menuHeader"
-                    v-if="item.type !== 'MORE'"
+                <li v-for="(item, index) in menuHeader"
                     :index="item.name"
                     :key="index"
                     @click="handleHeaderNav(item, index)"
@@ -26,7 +24,6 @@
                         trigger="click">
                         <div class="vue-design-header-right-more">
                             <dl v-for="(item, index) in menuHeader"
-                                v-if="item.type === 'MORE'"
                                 :key="index"
                             >
                                 <dt><vue-design-iconfont :type="item.icon" /></dt>
@@ -90,8 +87,13 @@ export default {
     },
     data() {
         return {
-            menuHeader: config('menuHeader.json')
+            menuHeaderJson: config('menuHeader.json')
         };
+    },
+    computed: {
+        menuHeader() {
+            return this.menuHeaderJson.filter(item => item.type === 'MORE');
+        }
     },
     methods: {
         handleExit() {
