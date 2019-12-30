@@ -5,7 +5,7 @@
   "author": "n.see <gooarter@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config ../vue-design-build",
+    "dev": "webpack-dev-server --inline --progress --config node_modules/vue-design-build",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node node_modules/vue-design-build/core/build.js"
@@ -16,7 +16,6 @@
     "js-cookie": "^2.2.1",
     "list-to-tree": "^2.2.3",
     "vue": "^2.6.11",
-    "vue-design-build": "^0.1.1",
     "vue-design-core": "^0.1.6",
     "vuex": "^3.1.2"
   },
@@ -64,6 +63,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^3.0.0",
+    "vue-design-build": "^0.1.1",
     "vue-loader": "^15.8.3",
     "vue-style-loader": "^3.1.2",
     "vue-template-compiler": "^2.6.11",
