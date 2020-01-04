@@ -63,7 +63,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^3.0.0",
-    "vue-design-build": "^0.1.1",
+    "vue-design-build": "^0.1.2",
     "vue-loader": "^15.8.3",
     "vue-style-loader": "^3.1.2",
     "vue-template-compiler": "^2.6.11",

@@ -1,19 +1,21 @@
 [
     {
-        "name": "doc",
-        "label": "文档",
-        "icon": "doc"
-    },
-    {
-        "name": "doc",
+        "name": "doc1",
         "label": "文档",
         "icon": "doc",
-        "type": "MORE"
-    },
-    {
-        "name": "doc",
-        "label": "文档",
-        "icon": "doc",
-        "type": "MORE"
+        "children": [
+            {
+                "name": "doc2",
+                "label": "文档",
+                "icon": "doc",
+                "type": "MORE"
+            },
+            {
+                "name": "doc3",
+                "label": "文档",
+                "icon": "doc",
+                "type": "MORE"
+            }
+        ]
     }
 ]

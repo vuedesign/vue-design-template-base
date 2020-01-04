@@ -38,7 +38,7 @@
                     <el-button @click="handleDelClick(scope.row)" type="text" size="small">删除</el-button>
                 </template>
             </el-table-column>
-            <div slot="empty" class="table-empty">===============</div>
+            <div slot="empty" class="table-empty"></div>
         </el-table>
         <vue-design-pagination>
             <pagination

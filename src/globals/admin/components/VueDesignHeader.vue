@@ -13,25 +13,32 @@
                     :key="index"
                     @click="handleHeaderNav(item, index)"
                 >
-                    <el-tooltip class="item" effect="dark" :content="item.label" placement="bottom">
-                        <span class="menu-btn"><vue-design-iconfont :type="item.icon" /></span>
-                    </el-tooltip>
-                </li>
-                <li>
                     <el-popover
+                        v-if="item.children && item.children.length > 0"
                         placement="bottom"
                         width="200"
                         trigger="click">
                         <div class="vue-design-header-right-more">
-                            <dl v-for="(item, index) in menuHeader"
-                                :key="index"
+                            <dl v-for="(citem, cindex) in item.children"
+                                :key="cindex"
                             >
-                                <dt><vue-design-iconfont :type="item.icon" /></dt>
-                                <dd>{{ item.label }}</dd>
+                                <dt><vue-design-iconfont :type="citem.icon" /></dt>
+                                <dd>{{ citem.label }}</dd>
                             </dl>
                         </div>
                         <span class="menu-btn" slot="reference"><vue-design-iconfont type="menu-more" /></span>
                     </el-popover>
+                    <el-tooltip
+                        v-else
+                        class="item"
+                        effect="dark"
+                        :content="item.label"
+                        placement="bottom"
+                    >
+                        <span class="menu-btn">
+                            <vue-design-iconfont :type="item.icon" />
+                        </span>
+                    </el-tooltip>
                 </li>
                 <li>
                     <el-popover
@@ -87,13 +94,8 @@ export default {
     },
     data() {
         return {
-            menuHeaderJson: config('menuHeader.json')
+            menuHeader: config('menuHeader.json')
         };
-    },
-    computed: {
-        menuHeader() {
-            return this.menuHeaderJson.filter(item => item.type === 'MORE');
-        }
     },
     methods: {
         handleExit() {
@@ -108,7 +110,7 @@ export default {
             });
         },
         handleHeaderNav(item, index) {
-            this.$message(`click on item ${JSON.stringify(item)}`);
+            this.$message('click on more item');
         }
     }
 };

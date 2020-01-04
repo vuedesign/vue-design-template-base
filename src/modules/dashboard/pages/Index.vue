@@ -1,12 +1,17 @@
 <style>
-
+.dashboard{
+    text-align: center;
+}
 </style>
 
 <template>
-    <div class="users">
-        {{ moduleNumber }}
-        <img :src="logo">
-        dashboard
+    <div class="dashboard">
+        <br />
+        <br />
+        <img src="@assets/logo.png">
+        <h2>dashboard</h2>
+        <br />
+        <br />
    </div>
 </template>
 
