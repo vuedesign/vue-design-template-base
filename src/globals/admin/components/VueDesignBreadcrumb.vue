@@ -44,7 +44,7 @@ export default {
 <style lang="scss">
     .vue-design-breadcrumb{
         width: 100%;
-        padding: 14px 16px;
+        padding: 13px 16px;
         .el-breadcrumb__inner{
             color: #eee;
         }

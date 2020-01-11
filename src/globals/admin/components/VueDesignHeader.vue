@@ -155,8 +155,8 @@ export default {
         cursor: pointer;
         > span{
             display: block;
-            height: 24px;
-            line-height: 24px;
+            height: 28px;
+            line-height: 28px;
         };
         .avatar{
             display: block;
@@ -190,8 +190,8 @@ export default {
             margin-right: 10px;
             .avatar-big{
                 display: block;
-                width: 48px;
-                height: 48px;
+                width: 40px;
+                height: 40px;
                 border-radius: 50%;
                 background-color: #eee;
             }
@@ -260,8 +260,8 @@ export default {
     }
     .vue-design-header-right{
         float: right;
-        line-height: 48px;
-        height: 48px;
+        line-height: 40px;
+        height: 40px;
         li{
             float: left;
             padding: 0 11px;
