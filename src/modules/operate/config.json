@@ -1,7 +1,0 @@
-{
-    "name": "operate",
-    "label": "用户运营",
-    "children": [
-        "activity"
-    ]
-}

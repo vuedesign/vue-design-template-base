@@ -9,7 +9,7 @@
         <br />
         <br />
         <img src="@assets/logo.png">
-        <h2>dashboard</h2>
+        <h2>VueDesign</h2>
         <br />
         <br />
    </div>
