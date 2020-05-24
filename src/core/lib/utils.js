@@ -85,7 +85,7 @@ export function getCache(context) {
     return cache;
 }
 
-export default function to(promise) {
+export function to(promise) {
     return promise.then(data => [null, data])
         .catch(err => [err]);
 }

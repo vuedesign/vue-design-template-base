@@ -28,5 +28,17 @@ module.exports = {
               'vue-design-core': resolve('src/core')
             }
         }
+    },
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                ws: true,
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': '/api'   //重写接口
+                }
+            }
+        }
     }
 };
