@@ -1,5 +1,5 @@
 export { config, configs } from './lib/configs';
-export { filtersCommit } from './lib/utils';
+export { filtersCommit, to } from './lib/utils';
 export {
     router,
     store,
