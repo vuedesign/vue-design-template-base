@@ -1,4 +1,4 @@
 export default {
     routerMode: 'history',
-    moduleRouter: 'admin'
+    moduleRouter: 'entry'
 };

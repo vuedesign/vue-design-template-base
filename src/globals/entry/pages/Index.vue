@@ -5,7 +5,7 @@
 <script>
 
 export default {
-    name: 'vued-admin'
+    name: 'vue-design-entry'
 };
 </script>
 

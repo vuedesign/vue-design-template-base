@@ -1,8 +1,11 @@
 
 import * as types from './types';
+import { config } from 'vue-design-core';
+
+const { BRAND_TITLE } = config('constants.js');
 
 const state = {
-    branchTitle: 'VueDesign'
+    brandTitle: BRAND_TITLE
 };
 
 const actions = {};
@@ -10,7 +13,7 @@ const actions = {};
 const mutations = {
     [types.SEO_TITLE](state, to) {
         const { label } = to.meta;
-        document.title = `${state.branchTitle}-${label}`;
+        document.title = `${state.brandTitle}-${label}`;
     }
 };
 

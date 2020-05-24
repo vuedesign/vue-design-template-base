@@ -4,10 +4,10 @@
 
 export default [
     {
-        path: 'dashboard',
-        name: 'dashboard',
+        path: 'test',
+        name: 'test',
         meta: {
-            label: '面板'
+            label: '面板test'
         },
         component: () => import('./pages/Index')
     }

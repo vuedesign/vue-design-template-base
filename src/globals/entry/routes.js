@@ -1,7 +1,7 @@
 export default [
     {
         path: '/',
-        name: 'admin',
+        name: 'entry',
         meta: {
             label: '首页'
         },
