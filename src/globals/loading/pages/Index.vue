@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="loading">
         <slot v-if="isFinish" />
         <div class="loading-inner"
             v-loading="!isFinish"
