@@ -1,5 +1,5 @@
 /**
- * Created by n.see on 2018/10/25.
+ * Created by n.see on 2020/06/21.
  */
 import axios from 'axios';
 
@@ -13,34 +13,38 @@ export default function vueDesignHttp(Vue, options = {}) {
         baseURL
     });
 
-    instance.interceptors.request.use(config => {
+    const requestSuccess = config => {
         // 在 interceptors.js 关闭时间戳注入
         // export const isTimestampDisabled = false;
         if (!interceptors.isTimestampDisabled) {
             injectionTimestamp(config);
         }
-        if (interceptors.ajaxRequestSuccess) {
-            return interceptors.ajaxRequestSuccess(config);
+        if (interceptors.httpRequestSuccess) {
+            return interceptors.httpRequestSuccess(config);
         }
         return config;
-    }, error => {
-        if (interceptors.ajaxRequestFailure) {
-            return interceptors.ajaxRequestFailure(error);
+    };
+    const requestError = error => {
+        if (interceptors.httpRequestFailure) {
+            return interceptors.httpRequestFailure(error);
         }
         return Promise.reject(error);
-    });
-
-    instance.interceptors.response.use(response => {
-        if (interceptors.ajaxResponseSuccess) {
-            return interceptors.ajaxResponseSuccess(response.data);
+    };
+    const responseSuccess = response => {
+        if (interceptors.httpResponseSuccess) {
+            return interceptors.httpResponseSuccess(response.data);
         }
         return response.data;
-    }, error => {
-        if (interceptors.ajaxResponseFailure) {
-            return interceptors.ajaxResponseFailure(error);
+    };
+    const responseError = error => {
+        if (interceptors.httpResponseFailure) {
+            return interceptors.httpResponseFailure(error);
         }
         return Promise.reject(error);
-    });
+    };
+
+    instance.interceptors.request.use(requestSuccess, requestError);
+    instance.interceptors.response.use(responseSuccess, responseError);
 
     Vue.prototype.$http = instance;
     Vue.http = instance;
@@ -54,13 +58,8 @@ export default function vueDesignHttp(Vue, options = {}) {
  */
 function injectionTimestamp(config) {
     const timestamp = new Date().getTime();
-    if (config.params) {
-        config.params = Object.assign({}, config.params, {
-            timestamp
-        });
-    } else {
-        config.params = {
-            timestamp
-        };
-    }
+    const { params = {} } = config;
+    Object.assign(params, {
+        timestamp
+    });
 }

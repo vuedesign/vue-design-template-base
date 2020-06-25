@@ -5,6 +5,7 @@ import { config } from './configs';
 import vueDesignRouter from './router';
 import vueDesignStore from './store';
 import vueDesignHttp from './http';
+import interceptors from './interceptors';
 import vendors from './vendors';
 import components from './components';
 import cookies from './plugins/cookies';
@@ -16,38 +17,33 @@ components(Vue);
 
 Vue.use(cookies);
 
-const interceptors = config('interceptors.js');
+config('interceptors.js');
 
-const router = vueDesignRouter(Vue, {
+export const router = vueDesignRouter(Vue, {
     rootRoutes,
     interceptors
 });
 
-const store = vueDesignStore(Vue, {
+export const store = vueDesignStore(Vue, {
     modules
 });
 
-const http = vueDesignHttp(Vue, {
-    interceptors 
+export const http = vueDesignHttp(Vue, {
+    interceptors
 });
 
+// 实例配置
 const defaultOptions = {
     router,
     store,
     render: h => h(App)
 };
 
-class VueDesign extends Vue {
-    constructor(options = {}) {
-        super(Object.assign(defaultOptions, options));
-    }
-}
+export const createApp = (el = '#app', options = {}) => {
+    Object.assign(defaultOptions, options)
+    return new Vue(defaultOptions).$mount(el);
+};
 
 export {
-    router,
-    store,
-    http,
     App
-}
-
-export default VueDesign;
+};

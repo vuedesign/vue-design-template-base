@@ -1,8 +1,3 @@
-import VueDesign from 'vue-design-core';
+import { createApp } from 'vue-design-core';
 
-/* eslint-disable no-new */
-new VueDesign({
-    created() {
-        console.log('run vue-design');
-    }
-}).$mount('#app');
+createApp();
